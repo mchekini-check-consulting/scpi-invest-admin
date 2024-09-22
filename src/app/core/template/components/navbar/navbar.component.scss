@@ -1,3 +1,21 @@
+.dropdown-toggle {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+
+}
+
+img{
+  height: 10px;
+  margin-right: 5px;
+}
+
+.nc-icon {
+  display: flex;
+  align-items: center;
+  line-height: 16px;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -57,28 +75,6 @@ input.form-control::placeholder {
 .nc-zoom-split{
   margin-bottom: -15px;
 }
-
-//.dropdown-menu {
-//  right: 0;
-//  left: auto;
-//}
-//
-//.navbar .nav-item .dropdown-menu {
-//  position: absolute;
-//  top: 100%;
-//  left: -50px;
-//}
-
-//.notification {
-//  background-color: red;
-//  color: white;
-//  border-radius: 50%;
-//  padding: 2px 6px;
-//  font-size: 12px;
-//  position: absolute;
-//  top: 10px;
-//  right: 0;
-//}
 .navbar .navbar-nav .notification {
   position: absolute;
   background-color: #FB404B;
@@ -114,7 +110,7 @@ input.form-control::placeholder {
 p {
   font-size: 16px;
   position: relative;
-  transform: translate(0,50%); /* Centre horizontalement et verticalement */
+  transform: translate(0,50%);
 
 }
 
@@ -134,18 +130,7 @@ p {
 }
 
 
-.dropdown-toggle img {
-  height: 10px;
-  width: auto;
-  margin-right: 5px;
-  display: inline-block;
-}
 
-.dropdown-toggle .nc-icon {
-  display: flex;
-  align-items: center;
-  line-height: 10px;
-}
 
 
 

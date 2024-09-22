@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {TranslateModule, TranslateService} from "@ngx-translate/core";
 import {CommonModule} from "@angular/common";
 import {OAuthService} from "angular-oauth2-oidc";
@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit{
 
   username:String='';
 
-  constructor(private translate: TranslateService, private oauthService: OAuthService) {
+  constructor(private translate: TranslateService, private oauthService: OAuthService,private changeDetector: ChangeDetectorRef) {
     translate.setDefaultLang('fr');
   }
 
@@ -42,6 +42,7 @@ export class NavbarComponent implements OnInit{
     let claims = this.oauthService.getIdentityClaims();
     if (claims) {
       this.username = claims['name'];
+      this.changeDetector.detectChanges();
     }
 
   }

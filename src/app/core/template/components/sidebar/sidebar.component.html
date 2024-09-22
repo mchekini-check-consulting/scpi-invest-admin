@@ -1,0 +1,20 @@
+<div class="sidebar" data-color="blue" data-image="img/sidebar-4.jpg">
+  <div class="sidebar-wrapper">
+    <div class="logo">
+      <a href="#" class="simple-text logo-normal" style="font-family: Roboto;font-size: 22px;padding:16px">
+        SCPI INVESTOR ADMIN<br>
+        <span>v{{ version }}</span>
+      </a>
+    </div>
+<div style="margin-top:40%">
+</div>
+    <ul class="nav">
+      <li *ngFor="let menuItem of menuItems" class="nav-item">
+        <a class="nav-link" [routerLink]="menuItem.path">
+          <i class="{{menuItem.icon}}"></i>
+          <p>{{menuItem.key | translate }}</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

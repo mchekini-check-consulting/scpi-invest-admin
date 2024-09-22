@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import {OAuthService} from "angular-oauth2-oidc";
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,20 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'scpi-invest-admin';
+  username: string = '';
+
+  constructor(private oauthService: OAuthService) {
+    this.loadUserProfile();
+  }
+
+  loadUserProfile() {
+    const claims = this.oauthService.getIdentityClaims();
+    if (claims) {
+      this.username = claims['preferred_username'];
+    }
+  }
+
+  logout() {
+    this.oauthService.logOut();
+  }
 }
